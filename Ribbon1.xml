@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+	<ribbon>
+		<tabs>
+			<tab id="TTS" label="উচ্চারণ">
+				<group id="Group0"
+					   >
+					<box id='button_box_0' boxStyle='horizontal'>
+						<button id='logo' showImage='true' getImage='getLogo' label='উচ্চারণ' size='large'/>
+					</box>
+				</group>
+
+
+				<group id="Group3" centerVertically='true' label='অক্ষর সেট'>
+					<box id="uni_bijoy" boxStyle="horizontal">
+						<toggleButton id ="bijoy2uni" label="ANSI" onAction='convertBijoy' size='normal' showImage='true' getEnabled= 'getPlayingStatus' getPressed='AnsiButtonPressed'/>
+						<toggleButton id ="uni2bijoy" label="UNICODE" onAction='convertUnicode' size='normal' showImage='true' getEnabled= 'getPlayingStatus' getPressed='UnicodeButtonPressed'/>
+					</box>
+				</group>
+				<group id ='Group2'  centerVertically='true' label='কণ্ঠ'>
+					<box id='genderBox' boxStyle='horizontal'>
+					<toggleButton id='male' label='পুরুষ' onAction='setGender2' size='normal'  getPressed='maleOnButton'  getEnabled= 'getPlayingStatus' />
+					<toggleButton id='female' label='নারী' onAction='setGender' size='normal'  getPressed='femaleOnButton' getEnabled= 'getPlayingStatus'/>
+					</box>
+				</group>
+
+				<group id='group_6'>
+					<box id='control_box_1' boxStyle='vertical'>
+						<labelControl id='emptyLabel2' label=' '/>
+						<dropDown id='speed_box' label='গতি' onAction='SpeedBoxValueChanged' getSelectedItemID='getDefaultSpeedValueID' getEnabled='getPlayingStatus'>
+							<item id='s_minus2' label='-2X'/>
+							<item id='s_minus1' label='-1X'/>
+							<item id='s_zero' label='0X'/>
+							<item id='s_plus1' label='1X'/>
+							<item id='s_plus2' label='2X'/>
+						</dropDown>
+						<dropDown id='pitch_box' label='পিচ' onAction='PitchBoxValueChanged' getSelectedItemID='getDefaultPitchValueID' getEnabled='getPlayingStatus'>
+							<item id='p_minus2' label='-2X'/>
+							<item id='p_minus1' label='-1X'/>
+							<item id='p_zero' label='0X'/>
+							<item id='p_plus1' label='1X'/>
+							<item id='p_plus2' label='2X'/>
+						</dropDown>
+					</box>
+				</group>
+				
+				<group id="Group1">
+					<box id='button_box_1' boxStyle='vertical'>
+						<labelControl id='emptyLabel5' label=' '/>
+						<toggleButton id='play'  getLabel='getPlayPauseButtonLabel' onAction='StartAudio'  size='normal'  getImage='getPlayPauseButtonImage' getPressed='playPauseUi' showLabel='true'/>
+						<button id='download' label='Download' onAction='ClearText' size='normal' showImage='true' getImage='getDownloadButtonImage' getEnabled='downloadEnable'/>
+					</box>
+					<box id='switch_box_4' boxStyle='vertical'>
+						<labelControl id='emptyLabel51' label=' '/>
+						<button id ="buttonStop" label="Stop" onAction='stopFunction' size='normal' showImage='true' getImage='getButtonStop' getVisible='getStopButtonVisible' />
+
+					</box>
+				</group>
+
+		    </tab>
+		</tabs>
+	</ribbon>
+</customUI>
+
+
